@@ -61,9 +61,11 @@
     <script src="js/app/models/Negociacao.js"></script>
     <script>
         var n1 = new Negociacao(new Date(), 5, 200.0);
-        var volume = n1.obtemVolume();
+        var volume = n1.getVolume();
         console.log(volume);
-        
+        console.log(n1.getData());
+        console.log(n1.getQuantidade());
+        console.log(n1.getValor());
     </script>
 </body>
 </html>
