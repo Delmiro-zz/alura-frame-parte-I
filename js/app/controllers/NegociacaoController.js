@@ -9,18 +9,16 @@ class NegociacaoController{
 
 
     adiciona(event){
-        event.preventDefault();
-        let helper = new DateHelper();
-        let data = helper.textParseData(this._inputData.value);
-
+        event.preventDefault();     
+       
         let negociacao = new Negociacao(
-            data,
+            DateHelper.textParseData(this._inputData.value),
             this._inputData.value,
             this._inputValor.value
             );     
 
         console.log(negociacao);
-        console.log(helper.dataParseText(negociacao.data));    
+        console.log(DateHelper.dataParseText(negociacao.data));    
     }
 
 }

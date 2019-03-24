@@ -1,16 +1,10 @@
 class DateHelper{
 
-    textParseData(text){
-        return new Date(...text.split('-').map(function(data, posicao){
-                if(posicao == 1){
-                    return data - 1;
-                }
-                return data;
-            })
-        );
+    static textParseData(text){
+        return new Date(...text.split('-').map((data, posicao) => data - posicao % 2));
     }
 
-    dataParseText(data){
+    static dataParseText(data){
         return data.getDate() + '/' + (data.getMonth + 1) + '/' + data.getFullYear;
     }
 }
